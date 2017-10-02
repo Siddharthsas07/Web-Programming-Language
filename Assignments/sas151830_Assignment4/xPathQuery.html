@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+ <button type="button" onclick="loadXMLDoc1()">Query 1</button> 
+</br>
+<table id="query1"></table>
+
+
+ <button type="button" onclick="loadXMLDoc3()">Query 3</button> 
+</br>
+<table id="query3"></table>
+
+ <button type="button" onclick="loadXMLDoc4()">Query 4</button> 
+</br>
+<table id="query4"></table>
+
+ <button type="button" onclick="loadXMLDoc5()">Query 5</button> 
+</br>
+<table id="query5"></table>
+
+<script>
+
+function loadXMLDoc(dname)
+{
+  if (window.XMLHttpRequest)
+    {
+    xhttp=new XMLHttpRequest();
+    }
+  else
+    {
+    xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+  xhttp.open("GET",dname,false);
+  try {xhttp.responseType="msxml-document"} catch(err) {} // Helping IE
+  xhttp.send("");
+  return xhttp;
+}
+
+  function loadXMLDoc1(dname)
+{
+  var x=loadXMLDoc("XML_Books.xml");
+var xml=x.responseXML;
+path="sum(//book_Info/price)";
+// code for IE
+if (window.ActiveXObject || xhttp.responseType=="msxml-document")
+{
+xml.setProperty("SelectionLanguage","XPath");
+nodes=xml.selectNodes(path);
+/*  */
+}
+
+// code for Chrome, Firefox, Opera, etc.
+else if (document.implementation && document.implementation.createDocument)
+{
+var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+
+//var result=nodes.iterateNext();
+console.log(nodes.numberValue);
+var table = nodes.numberValue;
+  
+  }
+  document.getElementById("query1").innerHTML = "Total " +table;
+
+}
+
+function loadXMLDoc3(){
+  var x=loadXMLDoc("XML_Books.xml");
+var xml=x.responseXML;
+path="//book_Info/author_Info/author_Name/first_Name[../../education='MBA' or ../../education='MS'] | //book_Info/author_Info/author_Name/middle_Initial[../../education='MBA' or ../../education='MS'] | //book_Info/author_Info/author_Name/last_Name[../../education='MBA' or ../../education='MS'] | //book_Info/title[../author/education='MBA' or ../author_Info/education='MS'] | //book_Info/author_Info/education[../education='MBA' or ../education='MS']";
+
+// code for IE
+if (window.ActiveXObject || xhttp.responseType=="msxml-document")
+{
+xml.setProperty("SelectionLanguage","XPath");
+nodes=xml.selectNodes(path);
+}
+
+// code for Chrome, Firefox, Opera, etc.
+else if (document.implementation && document.implementation.createDocument)
+{
+var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+
+var result=nodes.iterateNext();
+console.log(nodes.numbervalue);
+
+var table= "<th>Book</th><th>Author first name</th><th>Author Middle name</th><th>Author last name</th><th>Education</th><tr>";
+var i =0;
+while (result)
+  {
+
+    table+= "<td>"+result.childNodes[0].nodeValue + "</td>";
+ result=nodes.iterateNext();
+i++;
+if(i%5===0) {
+  table +="</tr><tr>";
+}
+  
+  
+  }
+  document.getElementById("query3").innerHTML = table;
+}
+}
+
+
+function loadXMLDoc4() {
+  var x=loadXMLDoc("XML_Books.xml");
+var xml=x.responseXML;
+path="//book_Info/author_Info/author_Name/first_Name[../../../price<100] | //book_Info/author_Info/author_Name/middle_Initial[../../../price<100] | //book_Info/author_Info/author_Name/last_Name[../../../price<100] | //book_Info/title[../price<100] | //book_Info/publisher/publisher_Name[../../price<100] | //book_Info/price[../price<100]";
+
+// code for IE
+if (window.ActiveXObject || xhttp.responseType=="msxml-document")
+{
+xml.setProperty("SelectionLanguage","XPath");
+nodes=xml.selectNodes(path);
+/*  */
+}
+
+// code for Chrome, Firefox, Opera, etc.
+else if (document.implementation && document.implementation.createDocument)
+{
+var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+
+var result=nodes.iterateNext();
+console.log(nodes.numbervalue);
+
+var table= "<th>Book</th><th>Price</th><th>Author first name</th><th>Author Middle name</th><th>Author last name</th><th>Publisher</th><tr>";
+var i =0;
+while (result)
+  {
+
+    table+= "<td>"+result.childNodes[0].nodeValue + "</td>";
+ result=nodes.iterateNext();
+i++;
+if(i%6===0) {
+  table +="</tr><tr>";
+}
+
+  
+  }
+  document.getElementById("query4").innerHTML = table;
+}
+
+
+}
+
+
+function loadXMLDoc5(dname)
+{
+  var x=loadXMLDoc("XML_Books.xml");
+var xml=x.responseXML;
+path="//book_Info/author_Info/author_Name/first_Name[translate( ../../../publication_Date,'-','') > '20101231' ] | //book_Info/author_Info/author_Name/middle_Initial[translate( ../../../publication_Date,'-','') > '20101231' ] | //book_Info/author_Info/author_Name/last_Name[translate( ../../../publication_Date,'-','') > '20101231' ] | //book_Info/title[translate( ../publication_Date,'-','') > '20101231' ] | //book_Info/publisher_Info/publisher_Name[translate( ../../publication_Date,'-','') > '20101231' ] | //book_Info/publication_Date[translate( ../publication_Date,'-','') > '20101231' ]";
+
+// code for IE
+if (window.ActiveXObject || xhttp.responseType=="msxml-document")
+{
+xml.setProperty("SelectionLanguage","XPath");
+nodes=xml.selectNodes(path);
+/*  */
+}
+
+// code for Chrome, Firefox, Opera, etc.
+else if (document.implementation && document.implementation.createDocument)
+{
+var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+
+var result=nodes.iterateNext();
+console.log(nodes.numbervalue);
+
+var table= "<th>Book</th><th>Publication Date</th><th>Author first name</th><th>Author Middle name</th><th>Author last name</th><th>Publisher</th><tr>";
+var i =0;
+while (result)
+  {
+
+    table+= "<td>"+result.childNodes[0].nodeValue + "</td>";
+ result=nodes.iterateNext();
+i++;
+if(i%6===0) {
+  table +="</tr><tr>";
+}
+
+  
+  }
+  document.getElementById("query5").innerHTML = table;
+}
+  }
+
+
+
+</script>
+
+</body>
+</html>

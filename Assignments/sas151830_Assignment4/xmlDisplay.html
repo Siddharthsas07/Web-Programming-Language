@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","XML_Books.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+
+var x=xmlDoc.getElementsByTagName("book_Info");
+var max = 0;
+var temp;
+for(i=0;i<x.length;i++){ 
+  temp = x[i].getElementsByTagName("author_Info").length;
+  if (temp > max){
+    max = temp;
+  }
+}
+
+var table_header_1="<tr><th>Title</th><th>ISBN</th><th>Price</th><th>Publication Date</th><th>Circulation Time";
+var table_header_2="</th>";
+for (k=0;k<max;k++){
+  table_header_2 +="<th>Author Name</th><th>Author DOB</th><th>Author Education</th>";
+}
+var table_header_3 = "<th>Publisher Name</th><th>Publisher Address</th></tr>";
+var table_header = table_header_1 + table_header_2 + table_header_3;
+
+document.write("<table border='1'>");
+document.write(table_header);
+
+
+
+
+for(j=0;j<x.length;j++)
+{
+
+  document.write("<tr>");
+  document.write("<td>");
+  document.write(x[j].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[j].getElementsByTagName("isbn")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[j].getElementsByTagName("price")[0].childNodes[0].nodeValue + " "+  x[j].getElementsByTagName("price")[0].getAttribute("currency"));
+  document.write("</td><td>");
+  document.write(x[j].getElementsByTagName("publication_Date")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[j].getElementsByTagName("circulation_Time")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+
+  k = 0;
+  var author_nm= x[j].getElementsByTagName("author_Info")[k].getElementsByTagName("author_Name")[0].getElementsByTagName("first_Name")[0].childNodes[0].nodeValue + " "+
+    x[j].getElementsByTagName("author_Info")[k].getElementsByTagName("author_Name")[0].getElementsByTagName("middle_Initial")[0].childNodes[k].nodeValue +" "+
+    x[j].getElementsByTagName("author_Info")[k].getElementsByTagName("author_Name")[0].getElementsByTagName("last_Name")[0].childNodes[0].nodeValue;
+
+  document.write(author_nm);
+  document.write("</td><td>");
+  document.write(x[j].getElementsByTagName("author_Info")[k].getElementsByTagName("dob")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[j].getElementsByTagName("author_Info")[k].getElementsByTagName("education")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+
+var next=x[j].getElementsByTagName("author_Info")[1];
+if(next!==undefined){
+  var author_nm= x[j].getElementsByTagName("author_Info")[1].getElementsByTagName("author_Name")[0].getElementsByTagName("first_Name")[0].childNodes[0].nodeValue + " "+
+    x[j].getElementsByTagName("author_Info")[1].getElementsByTagName("author_Name")[0].getElementsByTagName("middle_Initial")[0].childNodes[k].nodeValue +" "+
+    x[j].getElementsByTagName("author_Info")[1].getElementsByTagName("author_Name")[0].getElementsByTagName("last_Name")[0].childNodes[0].nodeValue;
+
+  document.write(author_nm);
+  document.write("</td><td>");
+  document.write(x[j].getElementsByTagName("author_Info")[1].getElementsByTagName("dob")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[j].getElementsByTagName("author_Info")[1].getElementsByTagName("education")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+}else{
+    document.write(" "+"</td><td>" +" "+"</td><td>" +" "+"</td><td>");
+}
+
+  document.write(x[j].getElementsByTagName("publisher_Name")[0].childNodes[0].nodeValue);
+  document.write("</td><td>"); 
+// var suiteTemp = x[j].getElementsByTagName("publisher_Info")[0].getElementsByTagName("publisher_Address")[0].getElementsByTagName("suite_Number")[0];
+// var suiteVal;
+//   if (suiteTemp!=undefined){
+//       suiteVal =  x[j].getElementsByTagName("publisher_Info")[0].getElementsByTagName("publisher_Address")[0].getElementsByTagName("suite_Number")[0].childNodes[0].nodeValue;
+//   }else{
+//       suiteVal = "";
+//   }
+var publisher_add= x[j].getElementsByTagName("publisher_Info")[0].getElementsByTagName("publisher_Address")[0].getElementsByTagName("street_Name")[0].childNodes[0].nodeValue +" "+
+    x[j].getElementsByTagName("publisher_Info")[0].getElementsByTagName("publisher_Address")[0].getElementsByTagName("city")[0].childNodes[0].nodeValue +" "+
+    x[j].getElementsByTagName("publisher_Info")[0].getElementsByTagName("publisher_Address")[0].getElementsByTagName("zip")[0].childNodes[0].nodeValue +" "+
+    x[j].getElementsByTagName("publisher_Info")[0].getElementsByTagName("publisher_Address")[0].getElementsByTagName("country")[0].childNodes[0].nodeValue;
+  document.write(publisher_add);
+  document.write("</td>");
+  
+  document.write("</tr>");
+ }
+document.write("</table>");
+</script>
+
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="amazon_books">
+	<xsd:complexType>
+		<xsd:sequence>	
+			<xsd:element ref="book_Info"  maxOccurs="unbounded"/>
+		</xsd:sequence>				
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="book_Info">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="title"/>
+			<xsd:element ref="isbn"/>
+			<xsd:element ref="price"/>
+			<xsd:element ref="publication_Date"/>
+			<xsd:element ref="circulation_Time"/>
+			<xsd:element ref="author_Info"  maxOccurs="unbounded"/>
+			<xsd:element ref="publisher_Info"/>
+		</xsd:sequence>				
+	</xsd:complexType>
+</xsd:element>
+
+
+<xsd:element name="author_Info" >
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="author_Name"/>
+			<xsd:element ref="dob"/>
+			<xsd:element ref="education"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="author_Name" >
+	<xsd:complexType>
+		<xsd:all>
+			<xsd:element ref="last_Name"/>
+			<xsd:element ref="middle_Initial"/>
+			<xsd:element ref="first_Name"/>
+		</xsd:all>	
+	</xsd:complexType>
+</xsd:element>
+
+
+<xsd:element name="publisher_Info" >
+	<xsd:complexType>
+		<xsd:all>
+			<xsd:element ref="publisher_Name"/>
+			<xsd:element ref="publisher_Address"/>
+		</xsd:all>	
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="publisher_Address" >
+	<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element ref="street_Name"/>
+					<xsd:element ref="suite_Number" minOccurs="0" maxOccurs="1"/>
+					<xsd:element ref="city"/>
+					<xsd:element ref="zip"/>
+					<xsd:element ref="country"/>
+				</xsd:sequence>	
+	</xsd:complexType>
+</xsd:element>
+
+
+
+
+
+
+	<xsd:element name="last_Name" >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z][a-z]*"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+	</xsd:element>	 
+	
+	<xsd:element name="middle_Initial"  >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z]\."/>
+			</xsd:restriction>
+		 </xsd:simpleType>	
+	</xsd:element>
+	
+	<xsd:element name="first_Name"  >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z][a-z]*"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+	</xsd:element>
+
+
+
+	<xsd:element name="dob" >
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:date">
+				  <xsd:minInclusive value="1900-01-01"/>
+   				  <xsd:maxInclusive value="2015-10-31"/>
+  			</xsd:restriction>
+ 		</xsd:simpleType>
+ 	</xsd:element>	
+
+ 	<xsd:element name="education"  >
+ 		 <xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="BA"/>
+			    <xsd:enumeration value="BS"/>
+			    <xsd:enumeration value="MS"/>
+			    <xsd:enumeration value="MBA"/>
+    			<xsd:enumeration value="PHD"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+ 	</xsd:element>	
+
+
+	<xsd:element name="publisher_Name"  >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z][a-zA-Z]*(\s[A-Z][a-zA-Z]*)*"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="street_Name"  >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[0-9][0-9]*\s[A-Z][a-z]*"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="suite_Number"  >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:integer">
+				<xsd:pattern value="[0-9]*"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="city"  >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z][a-z]*"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="zip"  >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:integer">
+				<xsd:pattern value="[0-9][0-9][0-9][0-9][0-9]"/>
+				 <xsd:minInclusive value="11111"/>
+   				  <xsd:maxInclusive value="99999"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="country"  >
+		 <xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z]*"/>
+			</xsd:restriction>
+		 </xsd:simpleType>
+	</xsd:element>
+
+
+	<xsd:element name="title"  >
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z][a-zA-Z]*(\s[A-Z][a-zA-Z]*)*"/>
+				<xsd:maxLength value="100"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="isbn"  >
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Za-z0-9]{3}\-[A-Za-z0-9]{3}\-[A-Za-z0-9]{4}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+
+
+	<xsd:element name="price">
+		<xsd:complexType>
+			    <xsd:simpleContent>
+					<xsd:extension base="xsd:decimal">
+						<xsd:attribute name="currency" type="xsd:string" use="required"/>		
+					</xsd:extension>	
+				</xsd:simpleContent>	
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="publication_Date" type="xsd:date"/>
+
+	<xsd:element name="circulation_Time" type="xsd:duration"/>
+
+
+</xsd:schema>

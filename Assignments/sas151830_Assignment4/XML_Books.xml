@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<amazon_books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XML_books.xsd">
+	<book_Info>
+		<title>Digital Fortress</title>
+		<isbn>439-x34-B9r2</isbn>
+		<price currency="USD">35.39</price>
+		<publication_Date>2002-01-18</publication_Date>
+		<circulation_Time>PT130S</circulation_Time>
+		<author_Info>
+			<author_Name>
+				<last_Name>Brown</last_Name>
+				<middle_Initial>C.</middle_Initial>
+				<first_Name>Dan</first_Name>
+			</author_Name>
+
+			<dob>1991-03-23</dob>
+			<education>BA</education>
+		</author_Info>
+
+
+		<publisher_Info>
+			<publisher_Name>Morgan Kaufmann</publisher_Name>
+			<publisher_Address>
+				<street_Name>175 Fifth Avenue</street_Name>
+				<suite_Number>901</suite_Number>
+				<city>New York</city>
+				<zip>10010</zip>
+				<country>USA</country>
+			</publisher_Address>
+		</publisher_Info>
+	</book_Info>
+
+	<book_Info>
+		<title>Bleachers</title>
+		<isbn>034-553-2031</isbn>
+		<price currency="USD">8.55</price>
+		<publication_Date>2003-09-09</publication_Date>
+		<circulation_Time>PT2M10S</circulation_Time>
+		<author_Info>
+			<author_Name>
+				<last_Name>Grisham</last_Name>
+				<middle_Initial>D.</middle_Initial>
+				<first_Name>John</first_Name>
+			</author_Name>
+			<dob>1967-11-15</dob>
+			<education>MS</education>
+		</author_Info>
+		<publisher_Info>
+			<publisher_Name>Doubleday</publisher_Name>
+			<publisher_Address>
+				<street_Name>1745 Broadway</street_Name>
+				<suite_Number></suite_Number>
+				<city>New York</city>
+				<zip>10019</zip>
+				<country>USA</country>
+			</publisher_Address>
+		</publisher_Info>
+	</book_Info>
+
+	<book_Info>
+		<title>INTRODUCTION TO ALGORITHMS</title>
+		<isbn>026-203-2937</isbn>
+		<price currency="USD">35.24</price>
+		<publication_Date>2012-03-12</publication_Date>
+		<circulation_Time>P1DT2S</circulation_Time>
+		<author_Info>
+			<author_Name>
+				<last_Name>Cormen</last_Name>
+				<middle_Initial>H.</middle_Initial>
+				<first_Name>Thomas</first_Name>
+			</author_Name>
+			<dob>1956-04-22</dob>
+			<education>PHD</education>
+		</author_Info>
+		<publisher_Info>
+			<publisher_Name>MIT Press</publisher_Name>
+			<publisher_Address>
+				<street_Name>1 Rogers St</street_Name>
+				<suite_Number>901</suite_Number>
+				<city>Cambridge</city>
+				<zip>02142</zip>
+				<country>USA</country>
+			</publisher_Address>
+		</publisher_Info>
+	</book_Info>
+
+	<book_Info>
+		<title>DSCJP Sun Certified Programmer for Java</title>
+		<isbn>007-159-1060</isbn>
+		<price currency="USD">29.59</price>
+		<publication_Date>2002-04-29</publication_Date>
+		<circulation_Time>PT130S</circulation_Time>
+		<author_Info>
+			<author_Name>
+				<last_Name>Sierra</last_Name>
+				<middle_Initial>J.</middle_Initial>
+				<first_Name>Kathy</first_Name>
+			</author_Name>
+			<dob>1976-11-25</dob>
+			<education>MBA</education>
+		</author_Info>
+		<publisher_Info>
+			<publisher_Name>Pearson Education</publisher_Name>
+			<publisher_Address>
+				<street_Name>6025 Commerce Dr</street_Name>
+				<suite_Number>2215</suite_Number>
+				<city>Irving</city>
+				<zip>75063</zip>
+				<country>USA</country>
+			</publisher_Address>
+		</publisher_Info>
+	</book_Info>
+
+	<book_Info>
+		<title>Forest Gump</title>
+		<isbn>439-x34-E9r2</isbn>
+		<price currency="USD">35.39</price>
+		<publication_Date>2002-01-18</publication_Date>
+		<circulation_Time>PT130S</circulation_Time>
+		<author_Info>
+			<author_Name>
+				<last_Name>Robert</last_Name>
+				<middle_Initial>C.</middle_Initial>
+				<first_Name>Brown</first_Name>
+			</author_Name>
+			<dob>1991-03-23</dob>
+			<education>BA</education>
+		</author_Info>
+		<publisher_Info>
+			<publisher_Name>Morgan Kaufmann</publisher_Name>
+			<publisher_Address>
+				<street_Name>1920 Fifth Capitol</street_Name>
+				<suite_Number>901</suite_Number>
+				<city>New York</city>
+				<zip>10010</zip>
+				<country>USA</country>
+			</publisher_Address>
+		</publisher_Info>
+	</book_Info>
+
+</amazon_books>
+
+

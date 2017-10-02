@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name= "author" content="Siddharth Shah"/>
+		<!-- <meta charset= "UTF-8"/> -->
+		<meta name= "keywords" content="HTML5, APIs"/>
+		<meta name= "description" content="Find the latest advancement in HTML and CSS"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<title>Assignment_2 - Siddharth Shah</title>
+	</head>
+
+	<body>
+	<!-- HTML5 semantic/structural tags -->
+		<header>
+			<h1 id="starting"> Welcome to CS 6314</h1>
+		</header>
+		<div>
+			<h1 id="html5_semantic/structural_tags"> This is HTML5 semantic/structural tags Section </h1>
+			<nav> Navigate to : 
+			<a href="#geo_id">Geolocation API </a> |
+			<a href="#drag_drop">Drag and Drop API</a> |
+			<a href="#end">Footer</a> |
+			<a href="hw2_q2.html">Part 2</a> |	
+			</nav>
+			<section>
+			<h1>This is Section Tag</h1>
+			<p class="section_semantic"> Hi, following section is about the use of HTML5. Enjoy !!</p>
+		</section>
+		</div>
+	<hr/>
+
+	<hr/>
+	
+	<!-- image map -->
+		<div class=image_div >
+			<h1 id="image_maph1"> This is Image Map Section </h1>
+			<p id = "image_map">Click on the face of the President to read the history:</p>
+
+			<img src="image_map.jpg" alt="Mount Rushmore" usemap="#mount_rushmore" />
+			<map name="mount_rushmore" id="mount_rushmore">
+			    <area alt="George Washington," target= "_blank" href="https://en.wikipedia.org/wiki/George_Washington" shape="poly" coords="52,82,37,104,29,131,29,162,33,198,42,209,63,219,88,223,114,220,138,216,149,199,148,186,154,171,174,166,184,151,175,128,159,97,131,75,115,63,91,58,72,61" />
+			    <area alt="Thomas Jefferson" target= "_blank" href="https://en.wikipedia.org/wiki/Thomas_Jefferson" shape="poly" coords="203,153,189,185,183,229,199,253,216,266,238,270,262,272,278,270,287,254,287,235,306,210,304,178,297,167,272,146,249,131,222,129,203,145" />
+			    <area alt="Theodore Roosevelt" target= "_blank" href="https://en.wikipedia.org/wiki/Theodore_Roosevelt" shape="poly" coords="330,239,310,286,316,324,336,349,352,365,372,369,399,369,410,335,412,304,410,269,404,238,390,214,372,210,354,208,337,216" />
+			    <area alt="Abraham Lincoln" target= "_blank" href="https://en.wikipedia.org/wiki/Abraham_Lincoln" shape="poly" coords="469,249,469,284,483,331,505,368,546,371,562,343,579,326,575,281,571,240,546,213,505,211,485,224" />
+			</map>
+		</div>
+
+	<hr/>
+	<!-- List -->
+		<div class=list_div>
+			<h1 id="list"> This is List Section </h1>
+			<p class="para" id="unordered">List of things to buy from Walmart</p>
+			<ul >
+				<li>Coffee</li>
+				<li>Milk</li>
+				<li>Bread</li>
+				<li>Cornflakes</li>
+			</ul>
+			<p class="para" id="ordered">Priority tasks this weekend</p>
+			<ol >
+				<li>WPL assignment 2</li>
+				<li>Apply to Microsoft</li>
+				<li>Learn R</li>
+			</ol>
+		
+			<p class="para" id="described">Veg items available at Chick-fill-a</p>
+			<dl >
+				<dt>Salads</dt>
+				<dd>Side Salad without cheese</dd>
+				<dd>Market Fresh Salad without feta cheese</dd>
+				<dt>Waffle Potato Fries</dt>
+				<dd>Waffle-shaped potatoes with the skin. Cooked in 100% canola oil until crispy outside and tender inside.</dd>
+			</dl>
+		</div>
+
+	<hr/>
+	<!-- Table -->
+		<div class="table">
+			<h1 id="table"> This is Table Section </h1>
+			<p>My Class Schedule:</p>
+			<table id=table1 border="1">
+				<tr>
+					<th>Subject Name</th>
+					<th>Days of Class</th>
+					<th>Timing</th>
+				</tr>
+				<tr>
+					<td>Web Programming Language</td>
+					<td>T-TH</td>
+					<td>7:00PM - 8:15PM</td>
+				</tr>
+				<tr>
+					<td>Statistical Methods for Data Science</td>
+					<td>M-We</td>
+					<td>5:30PM - 6:45PM</td>
+				</tr>
+				<tr>
+					<td>Computer Networks</td>
+					<td>M-We</td>
+					<td>10:00AM - 11:15AM</td>
+				</tr>
+			</table>
+
+		</div>
+	
+	<hr/>
+	<!-- Form -->
+		<div class="form"  >
+			<h1 id="forms"> Please fill out below form about event : Blood Donation </h1>
+			<form id="event_reg" oninput="donated.value=parseInt(input_range.value)">
+			<table class= "formtable" >
+				<tr>
+				<td>First Name</td>
+				<td><input type="text" name="First_Name"/></td>
+				</tr>
+				<tr>
+				<td>Last Name</td>
+				<td><input type="text" name="Last_Name"/></td>
+				</tr>
+				<tr>
+				<td>Are you attending orientation?</td>
+				<td><input type="radio" name="attend" value="Yes">Yes
+					<input type="radio" name="attend" value="No">No
+				</td>
+				</tr>
+				<tr>
+				<td>Which of following you have?</td>
+				<td><input type="checkbox" name="Car"/> Car
+					<input type="checkbox" name="Licence"/> Licence
+				</td>
+				</tr>
+				<td>Choose Password</td>
+				<td><input type="password" value=""/></td>
+				</tr>
+				<tr>
+				<tr>
+				<td>Enter color of T-shirt you would like</td>
+				<td><input type="color" name="fav_color"/></td>
+				</tr>
+				<tr>
+				<td>Your date of birth</td>
+				<td><input type="date" name="dob" value="1991-01-01"/></td>
+				</tr>
+				<tr>
+				<td>Select your blood group type</td>
+				<td><select name="bloodgroup" form="event_reg">
+						<option label= "A+" value="A+"></option>
+						<option label= "B+" value="B+"></option>
+						<option label= "AB+" value="AB+"></option>
+						<option label= "O+" value="O+"></option>
+						<option label= "O-" value="O-"></option>
+					</select>
+				</td>
+				</tr>
+				<tr>
+				<td>Count of blood donated before</td>
+				<td><input type="range" id = "input_range" min="0" max="25"/><output name="donated" for="range"> </output></td>
+				</tr>
+				<tr>
+				<td>Search place</td>
+				<td><input type="search" name="search"/></td>
+				</tr>
+				<tr>
+				<td>Enter your email Id</td>
+				<td><input type="email" id = "email_input" /></td>
+				</tr>
+				<tr>
+				<td><input type="reset" name="reset" value="Reset" /></td>
+				<td><input type="submit" name="submit" value="Submit" /></td>
+				</tr>
+			</table>	
+			</form>
+		</div>
+
+
+	<hr/>
+	<!-- UTDallas Link -->
+		Please visit link to UTDallas CS department <a href="http://cs.utdallas.edu/" id="utdallas" target="_blank">here</a>.
+
+	<hr/>
+	<!-- HTML5 Geolocation API -->
+		<div class=geo_api>
+			<h1 id="geo_id"> This is Geolocation API Section </h1>
+			<p id="geo">Click the button to get your coordinates:</p>
+			<button onclick="geoLoc()">Try It</button>
+		</div>
+
+		<script>
+		var x = document.getElementById("geo");
+
+		function geoLoc() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(showPosition);
+		    } else { 
+		    	x.innerHTML = "Geolocation is not supported by this browser.";
+		    }
+		}
+
+		function showPosition(position) {
+			x.innerHTML="Latitude: " + position.coords.latitude + 
+			"<br>Longitude: " + position.coords.longitude;	
+		}
+		</script>
+		
+	<hr/>
+	<!-- HTML5 Drag and Drop API -->
+		<div class="drag_drop_api" >
+			<h1 id="drag_drop"> This is Drag and Drop API Section </h1>
+			<p id="dragged">Drag most amazing F.R.I.E.N.D.S in the rectangle:</p>
+
+			<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<br/>
+			<img id="drag1" alt="6 Best friends" src="friends.jpg" draggable="true" ondragstart="drag(event)" width="500" height="338">
+		</div>
+		<script>
+			function allowDrop(ev) {
+			    ev.preventDefault();
+			}
+
+			function drag(ev) {
+			    ev.dataTransfer.setData("text/html", ev.target.id);
+			}
+
+			function drop(ev) {
+			    ev.preventDefault();
+			    var data = ev.dataTransfer.getData("text/html");
+			    ev.target.appendChild(document.getElementById(data));
+			    document.getElementById("dragged").innerHTML ="Coolest friends are now in your PhotoFrame.";
+			}
+		</script>
+		
+	<hr/>
+	<!-- HTML5 Storage API -->
+		<div class="storage_api" >
+			<h1 id="storage"> This is Storge API Section </h1>
+			<p><button onclick="addOne()" type="button">Count</button></p>
+			<p id="myCounter">Click the button to increment the counter.</p>
+		</div>
+		<script>
+			function addOne() {
+				if(typeof(Storage) !== "undefined") {
+					if (localStorage.clickcount) {
+						localStorage.clickcount = Number(localStorage.clickcount)+1;
+					} else {
+						localStorage.clickcount = 1;
+					}
+					document.getElementById("myCounter").innerHTML ="The button has been clicked " + localStorage.clickcount + " time(s)";
+				} else {
+					document.getElementById("myCounter").innerHTML = "WEB STORAGE NOT SUPPORTED BY YOUR BROWSER, TRY SOME OTHER ONE";
+				}
+			}
+		</script>
+		
+		<div id = "end"></div>
+		<footer>
+			<hr/>
+			<p class="semantic" id = "foot"> contact me : <a href="siddharth.shah2@utdallas.edu">
+			siddharth.shah2@utdallas.edu</a></p>
+			<mark>@copyright by Siddharth Shah</mark>
+			<nav> Go to : 
+			<a href="#starting">Header</a>
+			</nav>
+		</footer>
+		
+	</body>
+
+</html>
+
+
+
+
+
+
