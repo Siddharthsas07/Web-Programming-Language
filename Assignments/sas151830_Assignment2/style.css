@@ -1,0 +1,63 @@
+/* HTML5 Drag and Drop API - Id based */
+#div1 {
+    width: 500px;
+    height: 338px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+/*Table - descendant based*/
+tr th {
+	font-weight: bold;
+	background-color: #0000FF;
+	color: orange;
+}
+
+
+/*Form and Table - descendant based*/
+tr td:first-child{
+	font-weight: bold;
+}
+
+
+.drag_drop_api, .image_div, .list_div, .table, .form, .geo_api, .drag_drop_api, .storage_api{
+	border: 2px solid black;
+	width: 80em;
+	padding: 3px;
+}
+
+/*Image map, Drag and Drop - Id based*/
+#image_map, #dragged{
+	font-style: italic;
+}
+
+
+.para#unordered, .para#ordered, .para#described {
+	font-size: larger;
+	font-weight: bold;
+}
+
+.semantic#foot a{
+	font-style: italic;
+}
+
+#geo_id
+{
+text-align: left;
+color: blue;
+}
+
+
+.formtable input{
+  box-shadow:inset 0 0 1px 1px #888;
+  background: #fff;
+}
+
+.formtable {
+  box-shadow:inset 0 0 5px 5px #888;
+  background: #fff;
+}
+
+#starting{
+	text-align :center;
+}
